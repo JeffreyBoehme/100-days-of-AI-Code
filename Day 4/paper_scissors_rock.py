@@ -25,10 +25,10 @@ def print_choice(name, result):
             print("Invalid choice\n")
 
 
-def who_wins(choice: int, computer_choice: int):
+def who_wins(choice, computer_choice):
     global computer_score
     global player_score
-    match (choice, computer_choice):
+    match (int(choice), int(computer_choice)):
         case (0, 0) | (1, 1) | (2, 2):
             print("It's a draw")
         case (0, 1) | (1, 2) | (2, 0):
@@ -49,7 +49,7 @@ while play_again == "yes":
     print_choice("Computer", computer_choice)
 
     who_wins(choice, computer_choice)
-    print(f"The curren score is Player: {player_score} Computer: {computer_score}")
+    print(f"The current score is Player: {player_score} Computer: {computer_score}")
     if player_score > computer_score:
         print("You are winning!")
     elif computer_score > player_score:
